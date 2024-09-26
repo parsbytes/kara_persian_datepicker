@@ -1,6 +1,6 @@
-# Persian Flat DatePicker
+# Kara Persian DatePicker
 
-A modern, flat-style Persian date picker for React applications. This date picker supports both light and dark themes, providing a sleek and user-friendly interface for selecting dates.
+A modern, Persian date picker for React applications. This date picker supports both light and dark themes, providing a sleek and user-friendly interface for selecting dates.
 
 ## Installation
 
