@@ -1,0 +1,162 @@
+/* Main container */
+.datepicker-input {
+    border: none;
+    padding: 10px;
+    width: 220px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: inherit; /* Inherit from props */
+    color: inherit; /* Inherit from props */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    font-family: inherit; /* Inherit font-family from parent */
+    transition: background-color 0.3s ease;
+}
+
+.datepicker-input:hover {
+    background-color: #333; /* Lighter black on hover */
+}
+
+/* Datepicker popup */
+.datepicker-popup {
+    border: none;
+    background-color: inherit; /* Inherit from props */
+    position: absolute;
+    width: 370px;
+    margin-top: 5px;
+    z-index: 10;
+    padding: 15px;
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Datepicker header */
+.datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.datepicker-header-month,
+.datepicker-header-year {
+    padding: 5px 10px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 8px;
+}
+
+.datepicker-arrow {
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Arrow size */
+    cursor: pointer;
+    color: #fff; /* Arrow color */
+    border: none;
+    border-radius: 50%; /* Circle shape */
+    transition: color 0.3s ease, border 0.3s ease;
+}
+
+/* Styles for days */
+.datepicker-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days */
+    gap: 5px;
+}
+
+.datepicker-day {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.datepicker-day.selected {
+    background-color: inherit; /* Highlight selected day */
+    color: inherit;
+}
+
+/* Styles for months */
+.datepicker-months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.datepicker-month {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s, border 0.3s;
+}
+
+body.light-mode .datepicker-month.selected{
+    background-color: black;
+    color:white;
+}
+
+body.dark-mode .datepicker-month.selected{
+    background-color: white;
+    color:black;
+}
+
+.datepicker-month.current {
+    border: 2px solid white; /* White border for dark theme */
+    outline: none;
+    color: #fff; /* Keep text color white */
+    background-color: transparent; /* No background */
+}
+
+.datepicker-month:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+/* Styles for years */
+.datepicker-years {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.datepicker-year {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    transition: color 0.3s, border 0.3s;
+}
+
+.datepicker-year.current {
+    border: 2px solid white; /* White border for dark theme */
+    outline: none;
+    color: #fff; /* Keep text color white */
+    background-color: transparent; /* No background */
+}
+
+.datepicker-year:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+/* Dark and light theme support */
+body.dark-mode .datepicker-month.current,
+body.dark-mode .datepicker-year.current {
+    border: 2px solid white; /* For dark mode */
+}
+
+body.light-mode .datepicker-month.current,
+body.light-mode .datepicker-year.current {
+    border: 2px solid black; /* For light mode */
+}
