@@ -21,7 +21,7 @@ yarn add kara-persian-datepicker
 ```javascript
 import React, { useState } from 'react';
 import { DatePicker } from 'kara-persian-datepicker';
-import 'kara-persian-datepicker/dist/index.css'; // Import custom styles if needed
+import 'kara-persian-datepicker/dist/index.css';
 
 const App: React.FC = () => {
     const [selectedDate, setSelectedDate] = useState<string | null>(null);
