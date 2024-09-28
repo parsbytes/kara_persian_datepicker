@@ -70,15 +70,6 @@
     color: #333;
 }
 
-.datepicker-day.selected {
-    background-color: #007bff;
-    color: white;
-}
-
-.datepicker-day.holiday {
-    color: red;
-}
-
 .datepicker-day.empty {
     visibility: hidden;
 }
@@ -120,7 +111,7 @@
 .datepicker-year {
     text-align: center;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -129,12 +120,6 @@
 .datepicker-month:hover,
 .datepicker-year:hover {
     background-color: rgba(0, 0, 0, 0.1);
-}
-
-.datepicker-month.selected,
-.datepicker-year.selected {
-    background-color: #007bff;
-    color: white;
 }
 
 .datepicker-month-button,
