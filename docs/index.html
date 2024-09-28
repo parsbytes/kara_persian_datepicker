@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kara Persian DatePicker</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,50 +13,55 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
-        h1, h2, h3 {
-            color: #333;
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* 2 columns for desktop */
+            gap: 20px; /* Space between columns */
+            margin: 0 20px; /* Horizontal margin for desktop */
         }
-        code {
-            background-color: #eee;
-            padding: 2px 5px;
-            border-radius: 3px;
+
+        .content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .prop-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
+
+        .image img {
+            max-width: 100%; /* Responsive image */
+            border-radius: 8px;
         }
-        .prop-table th, .prop-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        .prop-table th {
-            background-color: #007BFF;
-            color: white;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Single column for mobile */
+                margin: 0; /* Remove horizontal margin for mobile */
+            }
+
+            .image {
+                order: -1; /* Show image first on mobile */
+            }
         }
     </style>
 </head>
 <body>
 
-<h1>Kara Persian DatePicker</h1>
-<p>A modern, Persian date picker for React applications. This date picker supports both light and dark themes, providing a sleek and user-friendly interface for selecting dates.</p>
+<div class="container">
+    <div class="content">
+        <h1>Kara Persian DatePicker</h1>
+        <p>A modern, Persian date picker for React applications. This date picker supports both light and dark themes, providing a sleek and user-friendly interface for selecting dates.</p>
 
-<h2>Installation</h2>
-<h3>npm</h3>
-<pre><code>npm install kara-persian-datepicker</code></pre>
+        <h2>Installation</h2>
+        <h3>npm</h3>
+        <pre><code>npm install kara-persian-datepicker</code></pre>
 
-<h3>yarn</h3>
-<pre><code>yarn add kara-persian-datepicker</code></pre>
+        <h3>yarn</h3>
+        <pre><code>yarn add kara-persian-datepicker</code></pre>
 
-<h2>Usage</h2>
-<pre><code>import React, { useState } from 'react';
+        <h2>Usage</h2>
+        <pre><code>import React, { useState } from 'react';
 import { DatePicker } from 'kara-persian-datepicker';
 import 'kara-persian-datepicker/dist/index.css';
 
@@ -92,54 +98,65 @@ const App: React.FC = () => {
 
 export default App;</code></pre>
 
-<h2>Features</h2>
-<ul>
-    <li><strong>Light and Dark Themes</strong>: Easily switch between light and dark modes.</li>
-    <li><strong>Modern Design</strong>: Flat design with rounded corners for a sleek look.</li>
-    <li><strong>User-Friendly</strong>: Simple interface for selecting dates.</li>
-    <li><strong>Responsive</strong>: Works well on various screen sizes.</li>
-</ul>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Light and Dark Themes</strong>: Easily switch between light and dark modes.</li>
+            <li><strong>Modern Design</strong>: Flat design with rounded corners for a sleek look.</li>
+            <li><strong>User-Friendly</strong>: Simple interface for selecting dates.</li>
+            <li><strong>Responsive</strong>: Works well on various screen sizes.</li>
+        </ul>
 
-<h2>Props</h2>
-<table class="prop-table">
-    <thead>
-    <tr>
-        <th>Prop</th>
-        <th>Type</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>`value`</td>
-        <td>`string`</td>
-        <td>string or null</td>
-    </tr>
-    <tr>
-        <td>`disabled`</td>
-        <td>`boolean`</td>
-        <td>Optional. If true, disables the date picker.</td>
-    </tr>
-    <tr>
-        <td>`theme`</td>
-        <td>`string`</td>
-        <td>Optional. Allows you to set the theme ('light' or 'dark'). Default is 'light'.</td>
-    </tr>
-    <tr>
-        <td>`classStyle`</td>
-        <td>`object`</td>
-        <td>Optional</td>
-    </tr>
-    <tr>
-        <td>`onChange`</td>
-        <td>`(date: Date) => void`</td>
-        <td>Callback function called when a date is selected. Receives the selected date as an argument.</td>
-    </tr>
-    </tbody>
-</table>
+        <h2>Props</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Prop</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>value</code></td>
+                <td><code>string</code></td>
+                <td>string or null</td>
+            </tr>
+            <tr>
+                <td><code>disabled</code></td>
+                <td><code>boolean</code></td>
+                <td>Optional. If true, disables the date picker.</td>
+            </tr>
+            <tr>
+                <td><code>theme</code></td>
+                <td><code>string</code></td>
+                <td>Optional. Allows you to set the theme ('light' or 'dark'). Default is 'light'.</td>
+            </tr>
+            <tr>
+                <td><code>classStyle</code></td>
+                <td><code>object</code></td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td><code>onChange</code></td>
+                <td><code>(date: Date) => void</code></td>
+                <td>Callback function called when a date is selected. Receives the selected date as an argument.</td>
+            </tr>
+            </tbody>
+        </table>
 
-<h2>Customization</h2>
-<p>You can customize the appearance of the date picker by modifying the CSS file or overriding styles in your own stylesheets. The `classStyle` prop allows for extensive customization, including background color, text color, and size.</p>
+        <h2>Customization</h2>
+        <p>You can customize the appearance of the date picker by modifying the CSS file or overriding styles in your own stylesheets. The <code>classStyle</code> prop allows for extensive customization, including background color, text color, and size.</p>
+
+        <h2>Authors</h2>
+        <ul>
+            <li><strong>Saleh Azimidokht</strong>: <a href="https://github.com/parsbytes">GitHub Profile</a></li>
+            <li><strong>Yousef Zare</strong>: <a href="https://github.com/yousefZare2000">GitHub Profile</a></li>
+        </ul>
+    </div>
+    <div class="image">
+        <img src="your-image.jpg" alt="Kara Persian DatePicker">
+    </div>
+</div>
 
 </body>
 </html>
